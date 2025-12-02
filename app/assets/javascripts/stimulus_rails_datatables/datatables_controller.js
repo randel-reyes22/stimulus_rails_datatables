@@ -106,6 +106,7 @@ export default class extends Controller {
         columns: this.columnsValue,
         responsive: false,
         scrollX: true,
+        scrollXInner: "110%", // force inner table wider to avoid clipping
         language: {
           processing:
             '<div class="spinner-border"></div><div class="mt-2">Loading...</div>',
@@ -117,12 +118,17 @@ export default class extends Controller {
           bottomStart: "info",
           bottomEnd: "paging",
         },
+        initComplete: function () {
+          // Adjust columns to align header and body correctly
+          this.api().columns.adjust();
+        },
       };
 
-      // Add drawCallback to dispatch custom event
       const appDataTable = new AppDataTable(`#${datatableId}`, options).table;
+
       if (appDataTable) {
         appDataTable.on("draw", () => {
+          appDataTable.columns.adjust(); // re-adjust on each draw
           this.element.dispatchEvent(
             new CustomEvent("datatable:drawn", {
               bubbles: true,
