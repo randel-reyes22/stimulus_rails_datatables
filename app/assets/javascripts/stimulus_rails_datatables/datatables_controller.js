@@ -105,6 +105,7 @@ export default class extends Controller {
         order: this.orderValue,
         columns: this.columnsValue,
         responsive: false,
+        scrollX: true,
         language: {
           processing:
             '<div class="spinner-border"></div><div class="mt-2">Loading...</div>',

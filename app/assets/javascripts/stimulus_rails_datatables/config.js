@@ -29,10 +29,6 @@ let datatablesConfig = {
     bottomStart: "info",
     bottomEnd: "paging",
   },
-
-  // Add srollX
-  scrollX: true,
-
   // Length menu options
   lengthMenu: [
     [10, 25, 50, 100],
