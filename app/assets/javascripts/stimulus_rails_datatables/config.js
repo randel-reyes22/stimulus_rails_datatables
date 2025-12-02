@@ -4,7 +4,8 @@
 let datatablesConfig = {
   // Language strings for DataTables UI
   language: {
-    processing: '<div class="spinner-border"></div><div class="mt-2">Loading...</div>',
+    processing:
+      '<div class="spinner-border"></div><div class="mt-2">Loading...</div>',
     lengthMenu: 'show <span class="px-2">_MENU_</span> entries',
     // Uncomment and customize any of these as needed:
     // search: '_INPUT_',
@@ -23,15 +24,21 @@ let datatablesConfig = {
 
   // Default layout configuration
   layout: {
-    topStart: 'pageLength',
-    topEnd: 'search',
-    bottomStart: 'info',
-    bottomEnd: 'paging'
+    topStart: "pageLength",
+    topEnd: "search",
+    bottomStart: "info",
+    bottomEnd: "paging",
   },
 
+  // Add srollX
+  scrollX: true,
+
   // Length menu options
-  lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]]
-}
+  lengthMenu: [
+    [10, 25, 50, 100],
+    [10, 25, 50, 100],
+  ],
+};
 
 // Function to let the app override defaults
 export function setDatatablesConfig(overrideConfig) {
